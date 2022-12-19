@@ -25,8 +25,27 @@ $main-gray : #636060;
 $inika : 'Inika', serif;
 $inter : 'Inter', sans-serif;
 
-// font-family: 'Inika', serif;
-// font-family: 'Inter', sans-serif;
+// --Mixins--
+
+@mixin baseWidth {
+  max-width: 1440px;
+  margin: auto;
+}
+
+.btn {
+  text-transform: uppercase;
+  border: 1px solid $main-orange;
+  border-radius: 10px;
+  font-family: $inter;
+  font-size: 16px;
+  padding: 11px 27px;
+  transition: .2s ease-in-out all;
+  &:hover{
+    cursor: pointer;
+    background-color: $main-orange;
+    color: #fff
+  }
+}
 
 @import './header.scss';
 @import './main/welcome.scss';

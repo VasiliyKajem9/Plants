@@ -3,8 +3,7 @@
   font-family: $inika;
   font-weight: 400;
   .header__wrapper {
-    max-width: 1440px;
-    margin: auto;
+    @include baseWidth;
     padding: 56px 110px;
     display: flex;
     align-items: flex-end;
@@ -24,7 +23,7 @@
     display: flex;
     .nav__item {
       color: $links-nav;
-      transition: .2s ease-in-out all;
+      transition: .3s ease-in-out all;
       &:not(:last-child) {
         margin-right: 46px;
       }
@@ -37,7 +36,7 @@
   }
 }
 
-@media (max-width: 1439px) {
+@media (max-width: 1250px) {
   .header {
     .header__wrapper {
       padding: 50px;
