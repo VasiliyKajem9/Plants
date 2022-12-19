@@ -1,0 +1,46 @@
+.header {
+  background-color: $bg-section;
+  font-family: $inika;
+  font-weight: 400;
+  .header__wrapper {
+    max-width: 1440px;
+    margin: auto;
+    padding: 56px 110px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.logo{
+  display: flex;
+  .logo__name {
+    margin-top: auto;
+  }
+}
+
+.nav {
+  .nav__list {
+    display: flex;
+    .nav__item {
+      color: $links-nav;
+      transition: .2s ease-in-out all;
+      &:not(:last-child) {
+        margin-right: 46px;
+      }
+
+      &:hover {
+        color: $main-orange ;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media (max-width: 1439px) {
+  .header {
+    .header__wrapper {
+      padding: 50px;
+    }
+  }
+}
