@@ -33,10 +33,10 @@ $inter : 'Inter', sans-serif;
 }
 
 .btn {
-  text-transform: uppercase;
   border: 1px solid $main-orange;
   border-radius: 10px;
   font-family: $inter;
+  min-width: 158px;
   font-size: 16px;
   padding: 11px 27px;
   transition: .2s ease-in-out all;
@@ -47,5 +47,12 @@ $inter : 'Inter', sans-serif;
   }
 }
 
+.content {
+  font-size: 20px;
+  color: $main-gray;
+  font-family: $inter;
+}
+
 @import './header.scss';
 @import './main/welcome.scss';
+@import './main/about.scss';

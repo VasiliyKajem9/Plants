@@ -20,11 +20,13 @@
       }
 
       .welcome__content{
-        font-size: 20px;
         max-width: 525px;
         margin-bottom: 48px;
-        color: $main-gray;
         line-height: 32px;
+      }
+
+      .welcome__btn {
+        text-transform: uppercase;
       }
     }
   }
