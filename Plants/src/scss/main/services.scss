@@ -1,0 +1,111 @@
+.service {
+  background-color: $bg-section;
+  padding: 40px 110px 65px;
+  .service__header {
+    @include baseWidth;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 90px;
+    .service__heading {
+      font-size: 40px;
+      color: $main-green;
+      letter-spacing: 2px;
+      max-width: 305px;
+      font-weight: 400;
+      margin-right: 140px;
+    }
+
+    .service__serviceNav {
+      align-items: center;
+      .serviceNav__elem {
+        .serviceNav__btn {
+          color: $main-orange;
+          height: 50px;
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .service__ourWorks {
+    @include baseWidth;
+  }
+}
+
+.ourWorks {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 110px;
+  .ourWorks__item {
+    max-width: 330px;
+    height: 450px;
+    margin-bottom: 55px;
+    .ourWorks__img {
+      width: 100%;
+      height: auto;
+    }
+
+    .ourWorks__descr {
+      text-align: center;
+      margin-top: -5px;
+      padding-top: 10px;
+      border: 1px solid #E3E1D5;
+      border-radius: 0 0 20px 20px;
+      .ourWorks__descrElem {
+        &:nth-child(1) {
+          margin-bottom: 10px;
+          color: $main-orange;
+          font-weight: 700;
+          font-family: $inter;
+          font-size: 20px;
+        }
+        &:nth-child(2) {
+          font-size: 16px;
+          margin-bottom: 36px;
+        }
+      }
+    }
+  }
+}
+
+.serviceNav {
+  display: flex;
+  .serviceNav__elem {
+    &:not(:last-child) {
+      margin-right: 38px;
+    }
+  }
+}
+
+@media (max-width: 1439px) {
+  .ourWorks {
+    column-gap: 20px;
+  }
+}
+@media (max-width: 1250px) {
+  .service {
+    padding: 58px 50px 65px;
+    .service__header {
+      margin-bottom: 40px;
+      .service__heading {
+        margin-bottom: 40px;
+        letter-spacing: unset;
+      }
+
+    }
+  }
+
+  .ourWorks {
+    // column-gap: 105px;
+      .ourWorks__item {
+        width: 280px;
+        margin-bottom: 38px;
+        .ourWorks__descr {
+          padding: 10px;
+        }
+      }
+  }
+}
