@@ -40,6 +40,7 @@ $inter : 'Inter', sans-serif;
   font-size: 16px;
   padding: 11px 27px;
   transition: .2s ease-in-out all;
+  background-color: inherit;
   &:hover{
     cursor: pointer;
     background-color: $main-orange;
@@ -57,3 +58,4 @@ $inter : 'Inter', sans-serif;
 @import './main/welcome.scss';
 @import './main/about.scss';
 @import './main/services.scss';
+@import './main/prices.scss';
