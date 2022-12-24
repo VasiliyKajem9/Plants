@@ -55,8 +55,11 @@ $inter : 'Inter', sans-serif;
 }
 
 @import './header.scss';
+
 @import './main/welcome.scss';
 @import './main/about.scss';
 @import './main/services.scss';
 @import './main/prices.scss';
 @import './main/contacts.scss';
+
+@import './footer.scss';
