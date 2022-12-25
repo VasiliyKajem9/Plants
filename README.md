@@ -1,2 +1,1 @@
-# Plants
 create-github-pages
