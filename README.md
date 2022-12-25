@@ -1,2 +1,2 @@
 # Plants
-create-gh-pages
+create-github-pages
