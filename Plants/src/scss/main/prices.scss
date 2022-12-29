@@ -94,3 +94,92 @@
     }
   }
 }
+
+@media (max-width: 1439px) {
+  .prices  {
+    padding: 35px 48px 85px 65px;
+    .prices__navigation {
+      .prices__heading {
+        font-size: 35px;
+      }
+
+      .prices__pricePicker {
+        margin-left: -14px;
+      }
+    }
+  
+    .prices__content {
+      margin-top: 106px;
+      .prices__subHeading {
+        font-size: 25px;
+        max-width: 295px;
+        margin-bottom: 37px;
+      }
+  
+      .prices__leafs {
+        margin-top: 25px;
+        margin-bottom: unset;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .prices  {
+    padding: 19px 0px 40px 0px;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    .prices__navigation {
+      margin: auto;
+      .prices__heading {
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 38px;
+      }
+
+      .prices__pricePicker {
+        margin-left: unset;
+      }
+    }
+  
+    .prices__content {
+      margin-top: 26px;
+      max-width: unset;
+      align-items: center;
+      .prices__subHeading {
+        max-width: 230px;
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 25px;
+        text-align: center;
+      }
+
+      .prices__btn {
+        min-width: 121px;
+        height: 35px;
+        padding: 6px 20px;
+        font-size: 15px;
+      }
+  
+      .prices__leafs {
+        display: none;
+      }
+    }
+  }
+
+  .pricePicker {
+    width: 224px;
+    padding: 30px 22px;
+    .pricePicker__elem {
+      padding: 12px 40px 12px 30px;
+      border-radius: 20px;
+      &:not(:last-child) {
+        margin-bottom: 21.5px;
+      }
+      .pricePicker__name {
+        font-size: 15px;
+      }
+    }
+  }
+}

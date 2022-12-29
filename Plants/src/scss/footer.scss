@@ -31,10 +31,29 @@
     &:not(:last-child) {
       margin-right: 30px;
     }
-    // .socialLinks__link {
-    //   .socialLinks__icon {
-        
-    //   }
-    // }
+  }
+}
+
+@media (max-width: 1439px) {
+  .footer {
+    padding: 28px 0px;
+    flex-direction: column;
+    align-items: center;
+    .footer__gitHubLink {
+      margin-right: unset;
+      margin-bottom: 15px;
+    }
+
+    .footer__rssLink {
+      margin-bottom: 28px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    .footer__rssLink {
+      margin-bottom: 12px;
+    }
   }
 }

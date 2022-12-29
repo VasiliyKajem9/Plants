@@ -60,3 +60,36 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .welcome {
+    .welcome__wrapper {
+      padding: 35px 25px 25px ;
+      flex-direction: row;
+      justify-content: center;
+      .welcome__bg {
+        display: none;
+      }
+
+      .welcome__descr {
+        .welcome__mainHeading {
+          font-size: 25px;
+          max-width: 330px;
+          line-height: 35px;
+          margin-bottom: 20px;
+        }
+
+        .welcome__content{
+          margin-bottom: 22px;
+        }
+  
+        .welcome__btn {
+          font-size: 10px;
+          min-width: 100px;
+          height: 35px;
+          padding: unset;
+        }
+      }
+    }
+  }
+}
