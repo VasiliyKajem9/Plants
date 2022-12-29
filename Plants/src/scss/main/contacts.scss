@@ -108,3 +108,9 @@
     height: 50px;
   }
 }
+
+@media (max-width: 300px) {
+  .contactsDropDown {
+    width: 90%;
+  }
+}
