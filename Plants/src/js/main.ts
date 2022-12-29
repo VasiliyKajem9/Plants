@@ -1,6 +1,19 @@
 import '../scss/main.scss';
 import '../index.html';
 
+const anchors = document.querySelectorAll('a[href*="#"]');
+
+for (const anchor of anchors) {
+  anchor.addEventListener('click', function (event) {
+    event.preventDefault();
+    const allAnchors: string = anchor.getAttribute('href')!;
+    document.querySelector('' + allAnchors)!.scrollIntoView({
+      behavior:'smooth',
+      block:'start',
+    });
+  });
+}
+
 function mobileMenu() {
   const mobileBtn = document.querySelector('#mobileBtn') as HTMLButtonElement;
   const headerNav = document.querySelector('#headerNav') as HTMLElement;
