@@ -13,11 +13,23 @@
   .footer__gitHubLink {
     margin-right: 20px;
   }
+
+  .footer__rssLink {
+    &:hover {
+      color: $main-green;
+    }
+  }
 }
 
 .gitHubLink {
   display: flex;
   .gitHubLink__elem {
+    &:last-child {
+      &:hover{
+        color: $main-green;
+      }
+    }
+
     &:not(:last-child) {
       margin-right: 20px;
     }
@@ -28,6 +40,16 @@
   display: flex;
   .socialLinks__elem {
     margin: auto 0;
+    &:hover {
+      .socialLinks__link {
+        svg {
+          path {
+            fill: $main-green;
+          }
+        }
+      }
+    }
+
     &:not(:last-child) {
       margin-right: 30px;
     }
