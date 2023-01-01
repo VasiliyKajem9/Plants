@@ -57,3 +57,60 @@
     }
   }
 }
+
+@media (max-width: 1439px) {
+  .contacts {
+    padding: 40px 0px 0 0px;
+    .contacts__wrapper {
+      flex-direction: column;
+      align-items: center;
+      .contacts__heading {
+        order: -1;
+        margin: unset;
+      }
+  
+      .contacts__contactsDropDown {
+        margin-top: 101px;
+        margin-bottom: 250px;
+        order: -1;
+      }
+
+      .contacts__img{
+        max-width: 200px;
+        height: 250px;
+      }
+    }
+  } 
+}
+
+@media (max-width: 767px) {
+  .contacts {
+    padding: 25px 0px 0 0px;
+    .contacts__wrapper {
+      .contacts__heading {
+        font-size: 25px;
+      }
+  
+      .contacts__contactsDropDown {
+        margin-top: 80px;
+        margin-bottom: 130px;
+      }
+
+      .contacts__img{
+        max-width: 100px;
+        height: 125px;
+      }
+    }
+  }
+
+  .contactsDropDown {
+    width: 300px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 300px) {
+  .contactsDropDown {
+    width: 90%;
+  }
+}

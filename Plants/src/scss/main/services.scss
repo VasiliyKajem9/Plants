@@ -43,6 +43,7 @@
     max-width: 330px;
     height: 450px;
     margin-bottom: 55px;
+    border-radius: 20px 20px 0 0;
     .ourWorks__img {
       width: 100%;
       height: auto;
@@ -93,7 +94,7 @@
 }
 @media (max-width: 1250px) {
   .service {
-    padding: 58px 50px 65px;
+    padding: 61px 50px 35px;
     .service__header {
       margin-bottom: 40px;
       .service__heading {
@@ -105,13 +106,63 @@
   }
 
   .ourWorks {
-    // column-gap: 105px;
-      .ourWorks__item {
-        width: 280px;
-        margin-bottom: 38px;
-        .ourWorks__descr {
-          padding: 10px;
+    .ourWorks__item {
+      width: 280px;
+      margin-bottom: 38px;
+      overflow: hidden;
+      .ourWorks__img {
+        height: 350px;
+        width: 330px;
+      }
+
+      .ourWorks__descr {
+        padding: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .service {
+    padding: 33px 25px 0px;
+    .service__header {
+      margin-bottom: 30px;
+      .service__heading {
+        font-size: 25px;
+        line-height: 30px;
+        letter-spacing: 1.6px;
+        max-width: 190px;
+        margin-right: unset;
+      }
+
+      .service__serviceNav {
+        .serviceNav__elem {
+          .serviceNav__btn {
+            height: 35px;
+            min-width: 120px;
+            font-size: 15px;
+            padding: 6px 20px;
+          }
         }
       }
+    }
+  }
+  
+  .ourWorks {
+    justify-content: center;
+    .ourWorks__item {
+      margin-bottom: 34px;
+    }
+  }
+
+  .serviceNav {
+    display: flex;
+    flex-wrap: wrap;
+    .serviceNav__elem {
+      margin-bottom: 10px;
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
   }
 }

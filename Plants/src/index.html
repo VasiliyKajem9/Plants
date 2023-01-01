@@ -8,33 +8,40 @@
   <title>Plants</title>
 </head>
 <body class="app">
-  <header class="header app__header"> 
+  <header class="header app__header" id="home"> 
     <div class="header__wrapper">
       <a href="#" class="logo header__logo">
         <img src="./img/logos/logo.png" alt="Logo" class="logo__img">
         <p class="logo__name">Plants</p>
       </a>
 
-      <nav class="nav header__nav">
+      <button class="mobileBtn header__mobileBtn" id="mobileBtn">
+        <span class="mobileBtn__elem"></span>
+        <span class="mobileBtn__elem"></span>
+        <span class="mobileBtn__elem"></span>
+        <span class="mobileBtn__elem"></span>
+      </button>
+
+      <nav class="nav header__nav" id="headerNav">
         <ul class="nav__list">
           <li class="nav__item">
-            <a href="#" class="nav__link">Home</a>
+            <a href="#home" class="nav__link">Home</a>
           </li>
 
           <li class="nav__item">
-            <a href="#" class="nav__link">About us</a>
+            <a href="#about" class="nav__link">About us</a>
           </li>
 
           <li class="nav__item">
-            <a href="#" class="nav__link">Service</a>
+            <a href="#service" class="nav__link">Service</a>
           </li>
 
           <li class="nav__item">
-            <a href="#" class="nav__link">Price</a>
+            <a href="#prices" class="nav__link">Price</a>
           </li>
 
           <li class="nav__item">
-            <a href="#" class="nav__link">Contacts</a>
+            <a href="#contacts" class="nav__link">Contacts</a>
           </li>
         </ul>
       </nav>
@@ -60,7 +67,7 @@
       </div>
     </section>
 
-    <section class="about app__about">
+    <section class="about app__about" id="about">
       <div class="about__wrapper">
         <div class="about__descr">
           <h2 class="heading about__heading">
@@ -76,7 +83,7 @@
       </div>
     </section>
 
-    <section class="service app__service"> 
+    <section class="service app__service" id="service"> 
       <div class="service__header">
         <h3 class="service__heading">
           Service and our projects
@@ -105,7 +112,7 @@
 
       <ul class="ourWorks service__ourWorks">
         <li class="ourWorks__item">
-          <img src="./img/service/first-5.png" alt="gardenCare" class="ourWorks__img">
+          <img src="./img/service/first5.png" alt="gardenCare" class="ourWorks__img">
 
           <div class="ourWorks__descr">
             <p class="ourWorks__descrElem">Garden care</p>
@@ -166,7 +173,7 @@
       </ul>
     </section>
 
-    <section class="prices app__prices">
+    <section class="prices app__prices" id="prices">
       <div class="prices__navigation">
         <h2 class="prices__heading">Prices</h2>
 
@@ -202,7 +209,7 @@
       </div>
     </section>
 
-    <section class="contacts app__contacts">
+    <section class="contacts app__contacts" id="contacts">
       <div class="contacts__wrapper">
         <img src="./img/other/contactWoman.png" alt="contactWoman" class="contacts__img">
 
