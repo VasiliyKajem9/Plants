@@ -26,6 +26,14 @@
           }
         }
       }
+      
+      .serviceNav__elem_active {
+        .serviceNav__btn{
+          background-color: $main-green;
+          color: #fff;
+          border: none;
+        }
+      }
     }
   }
 
@@ -44,6 +52,7 @@
     height: 450px;
     margin-bottom: 55px;
     border-radius: 20px 20px 0 0;
+    transition: .5s ease-in-out all;
     .ourWorks__img {
       width: 100%;
       height: auto;
@@ -69,6 +78,9 @@
         }
       }
     }
+  }
+  .ourWorks__item_active {
+    filter: blur(3px);
   }
 }
 

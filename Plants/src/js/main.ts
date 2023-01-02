@@ -62,3 +62,40 @@ for (const anchor of anchors) {
     } else return
   });
 }
+
+// services picker
+
+const servicesControlBtn: Array<HTMLButtonElement> = 
+  Array.from(document.querySelectorAll('.serviceNav__elem'));
+
+const services: Array<HTMLElement> = 
+  Array.from(document.querySelectorAll('.ourWorks__item'));
+
+const activeCleaner = (arr: Array<HTMLElement>, classToRemove: string) => {
+  arr.forEach(elem => {
+    elem.classList.remove(`${classToRemove}`)
+  })
+}
+
+servicesControlBtn.forEach(navBtn => {
+  navBtn.onclick = () => {
+    let count = 0;
+    navBtn.classList.toggle('serviceNav__elem_active')
+
+    servicesControlBtn.forEach(item => {
+      if (item.className.includes('serviceNav__elem_active')) {
+        count += 1;
+      }
+    })
+
+    if (count >= 3) {
+      activeCleaner(servicesControlBtn, 'serviceNav__elem_active')
+    }
+
+    services.forEach(service => {
+      if (service.dataset.category !== navBtn.dataset.category) {
+        service.classList.toggle('ourWorks__item_active')
+      }
+    })
+  }
+})
