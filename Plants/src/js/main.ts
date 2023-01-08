@@ -65,6 +65,8 @@ for (const anchor of anchors) {
 
 // services picker
 
+let pickedServices: Array<string> = [];
+
 const servicesControlBtn: Array<HTMLButtonElement> = 
   Array.from(document.querySelectorAll('.serviceNav__elem'));
 
@@ -80,7 +82,18 @@ const activeCleaner = (arr: Array<HTMLElement>, classToRemove: string) => {
 servicesControlBtn.forEach(navBtn => {
   navBtn.onclick = () => {
     let count = 0;
-    navBtn.classList.toggle('serviceNav__elem_active')
+
+    if (navBtn.className.includes('serviceNav__elem_active')) {
+      navBtn.classList.remove('serviceNav__elem_active');
+    } else {
+      navBtn.classList.add('serviceNav__elem_active');
+    } 
+
+    if (!pickedServices.includes(`${navBtn.dataset.category}`)) {
+      pickedServices.push(navBtn.dataset.category!);
+    } else pickedServices = pickedServices.filter(elem => elem != navBtn.dataset.category)
+    
+    console.log(pickedServices)
 
     servicesControlBtn.forEach(item => {
       if (item.className.includes('serviceNav__elem_active')) {
@@ -88,14 +101,18 @@ servicesControlBtn.forEach(navBtn => {
       }
     })
 
-    if (count >= 3) {
-      activeCleaner(servicesControlBtn, 'serviceNav__elem_active')
-    }
-
     services.forEach(service => {
-      if (service.dataset.category !== navBtn.dataset.category) {
-        service.classList.toggle('ourWorks__item_active')
-      }
+      if (!pickedServices.includes(`${service.dataset.category}`)) {
+        service.classList.add('ourWorks__item_active')
+      } else service.classList.remove('ourWorks__item_active')
     })
+
+    if (count >= 3) {
+      activeCleaner(servicesControlBtn, 'serviceNav__elem_active');
+      activeCleaner(services, 'ourWorks__item_active');
+      pickedServices = [];
+    } else if (pickedServices.length == 0) {
+      activeCleaner(services, 'ourWorks__item_active');
+    }
   }
 })
