@@ -116,3 +116,24 @@ servicesControlBtn.forEach(navBtn => {
     }
   }
 })
+
+// dropDown
+
+const prices: Array<HTMLElement> = Array.from(document.querySelectorAll('.pricePicker__elem'));
+const dropDownContent: Array<HTMLElement> = Array.from(document.querySelectorAll('.pricePicker__content'));
+const pricesOrderBtn: Array<HTMLButtonElement> = Array.from(document.querySelectorAll('.pricePicker__orderBtn')); 
+
+pricesOrderBtn.forEach(btn => {
+  btn.addEventListener('click', event => {
+    event.stopPropagation()
+  })
+})
+
+prices.forEach((priceDropDown, index) => {
+  priceDropDown.onclick = () => {
+    priceDropDown.classList.toggle('pricePicker__elem_active');
+    setTimeout(() => dropDownContent[index].classList.toggle('pricePicker__content_active'), 70)
+    
+    console.dir(priceDropDown)
+  }
+})

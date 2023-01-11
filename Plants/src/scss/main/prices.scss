@@ -58,38 +58,107 @@
   .pricePicker__elem {
     background-color: $bg-section;
     padding: 12px 40px;
+    height: 50px;
     border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    transition: .2s ease-in-out all;
+    &:hover {
+      background-color: #D6E7D2;
+      cursor: pointer;
+    }
     &:not(:last-child) {
       margin-bottom: 32px;
     }
-    .pricePicker__name {
-      font-family: $inter;
-      font-size: 20px;
-      color: #000;
-      font-weight: 700;
+    .pricePicker__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .pricePicker__name {
+        font-family: $inter;
+        font-size: 20px;
+        color: #000;
+        font-weight: 700;
+      }
+
+      .pricePicker__dropD {
+        width: 16px;
+        height: 16px;
+        background-color: #d9d9d9;
+        border-radius: 50%;
+        border: none;
+        position: relative;
+        &:hover {
+          cursor: pointer;
+        }
+        &::after {
+          content: '';
+          transition: .5s ease-in-out all;
+          position: absolute;
+          left: 37%;
+          top: 50%;
+          border: solid #717171;
+          border-width: 0 1px 1px 0;
+          display: inline-block;
+          padding: 2px;
+          transform: rotate(45deg);
+          -webkit-transform: rotate(45deg) translateY(-50%) translateX(-50%);
+        }
+      }
     }
 
-    .pricePicker__dropD {
-      width: 16px;
-      height: 16px;
-      background-color: #d9d9d9;
-      border-radius: 50%;
-      border: none;
-      position: relative;
-      &::after {
-        content: '';
-        position: absolute;
-        left: 37%;
-        top: 50%;
-        border: solid #717171;
-        border-width: 0 1px 1px 0;
-        display: inline-block;
-        padding: 2px;
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg) translateY(-50%) translateX(-50%);
+    .pricePicker__content {
+      border-top: 1px solid #AEA1A1;
+      margin-top: 12px;
+      font-family: $inter;
+      display: none;
+      .pricePicker__info {
+        color: $main-lightGray;
+        font-size: 10px;
+        margin-top: 6px;
+      }
+
+      .pricePicker__price {
+        span{
+          font-size: 12px;
+          &:nth-child(1) {
+            color: #E06733;
+            font-weight: 700;
+          }
+          &:nth-child(2) {
+            color: #E06733;
+            font-size: 16px;
+            font-weight: 700;
+          }
+        }
+      }
+
+      .pricePicker__orderBtn {
+        color: $main-lightGray;
+        font-weight: 700;
+        margin-top: 12px;
+        border: none;
+        background-color: #fff;
+        padding: 4px 20px;
+        border-radius: 10px;
+        transition: .2s ease-in-out all;
+        &:hover{
+          cursor: pointer;
+          background-color: $main-orange;
+          color: #fff;
+        }
+      }
+    }
+    .pricePicker__content_active {
+      display: block;
+    }
+  }
+  .pricePicker__elem_active {
+    height: 154px;
+    .pricePicker__header {
+      .pricePicker__dropD {
+        &::after {
+          transform: rotate(-135deg);
+          -webkit-transform: rotate(-135deg) translateY(15%) translateX(30%);
+        }
       }
     }
   }
@@ -172,7 +241,7 @@
     width: 224px;
     padding: 30px 22px;
     .pricePicker__elem {
-      padding: 12px 40px 12px 30px;
+      padding: 12px 25px 12px 30px;
       border-radius: 20px;
       &:not(:last-child) {
         margin-bottom: 21.5px;
@@ -180,6 +249,9 @@
       .pricePicker__name {
         font-size: 15px;
       }
+    }
+    .pricePicker__elem_active {
+      height: 180px;
     }
   }
 }
