@@ -46,22 +46,26 @@ overlay.onclick = mobileAction;
 
 // smoth anchors
 
-const anchors = document.querySelectorAll('a[href*="#"]');
+const smoothAnch = () => {
+  const anchors = document.querySelectorAll('a[href*="#"]');
 
-for (const anchor of anchors) {
-  anchor.addEventListener('click', function (event) {
-    event.preventDefault();
-    const allAnchors: string = anchor.getAttribute('href')!;
-    document.querySelector('' + allAnchors)!.scrollIntoView({
-      behavior:'smooth',
-      block:'start',
+  for (const anchor of anchors) {
+    anchor.addEventListener('click', function (event) {
+      event.preventDefault();
+      const allAnchors: string = anchor.getAttribute('href')!;
+      document.querySelector('' + allAnchors)!.scrollIntoView({
+        behavior:'smooth',
+        block:'start',
+      });
+
+      if (headerNav.className.includes('nav_active') && window.outerWidth < 768) {
+        output()
+      } else return
     });
-
-    if (headerNav.className.includes('nav_active') && window.outerWidth < 768) {
-      output()
-    } else return
-  });
+  }
 }
+
+smoothAnch();
 
 // services picker
 
@@ -125,15 +129,33 @@ const pricesOrderBtn: Array<HTMLButtonElement> = Array.from(document.querySelect
 
 pricesOrderBtn.forEach(btn => {
   btn.addEventListener('click', event => {
-    event.stopPropagation()
+    event.stopPropagation();
+    event.preventDefault();
+    document.querySelector('#contacts')!.scrollIntoView({
+      behavior:'smooth',
+      block:'start',
+    })
   })
 })
 
 prices.forEach((priceDropDown, index) => {
   priceDropDown.onclick = () => {
+    prices.forEach(elem => {
+      if (elem != priceDropDown) {
+        elem.classList.remove('pricePicker__elem_active')
+      }
+    });
+    dropDownContent.forEach(elem => {
+      if (elem != dropDownContent[index]) {
+        elem.classList.remove('pricePicker__content_active')
+      }
+    });
+
     priceDropDown.classList.toggle('pricePicker__elem_active');
-    setTimeout(() => dropDownContent[index].classList.toggle('pricePicker__content_active'), 70)
-    
-    console.dir(priceDropDown)
+    setTimeout(() => {
+      dropDownContent[index].classList.toggle('pricePicker__content_active');
+    }, 70);
   }
 })
+
+// contacts dropD
