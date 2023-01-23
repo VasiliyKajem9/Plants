@@ -159,3 +159,63 @@ prices.forEach((priceDropDown, index) => {
 })
 
 // contacts dropD
+
+const cityPicker = document.querySelector('.contactsDropDown') as HTMLElement;
+const contactsInfo = document.querySelector('.contacts__contactsContent') as HTMLElement;
+const cityDropD = document.querySelector('.contactsDropDown__list') as HTMLElement;
+const cityDropDownBtn = document.querySelector('.contactsDropDown__btn') as HTMLElement;
+const dropDownElements: Array<HTMLElement> = Array.from(document.querySelectorAll('.contactsDropDown__elem'));
+
+const dropDownTitle = document.querySelector('.contactsDropDown__title') as HTMLElement;
+const contacts = [
+  {
+    city: 'Canandaigua, NY',
+    phone: '+1	585	393 0001',
+    office: '151 Charlotte Street',
+  },
+  {
+    city: 'New York City',
+    phone: '+1	212	456 0002',
+    office: '9 East 91st Street',
+  },
+  {
+    city: 'Yonkers, NY',
+    phone: '+1	914	678 0003',
+    office: '511 Warburton Ave',
+  },
+  {
+    city: 'Sherrill, NY',
+    phone: '+1	315	908 0004',
+    office: '14 WEST Noyes BLVD',
+  },
+]
+
+cityPicker.onclick = () => {
+  cityPicker.classList.toggle('contactsDropDown_active');
+  cityDropD.classList.toggle('contactsDropDown__list_active');
+  cityDropDownBtn.classList.toggle('contactsDropDown__btn_active');
+
+  for (let i = 0; i < dropDownElements.length; i++) {
+    setTimeout(() => {
+      dropDownElements[i].classList.toggle('contactsDropDown__elem_active');
+    }, +(i + '99'))
+  }
+}
+
+dropDownElements.forEach( (elem, index) => {
+  elem.onclick = () => {
+    dropDownTitle.innerHTML = elem.innerHTML;
+    contactsInfo.classList.add('contacts__contactsContent_active');
+
+    const city = document.querySelector('#contacts__city') as HTMLElement;
+    const phone = document.querySelector('#contacts__phone') as HTMLLinkElement;
+    const callBtn = document.querySelector('#contacts__callBtn') as HTMLLinkElement;
+    const office = document.querySelector('#contacts__office') as HTMLElement;
+
+    city.innerHTML = `${contacts[index].city}`;
+    phone.innerHTML = `${contacts[index].phone}`;
+    phone.href = `tel:${contacts[index].phone}`;
+    callBtn.href = `tel:${contacts[index].phone}`;
+    office.innerHTML = `${contacts[index].office}`;
+  }
+})

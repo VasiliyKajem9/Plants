@@ -5,6 +5,7 @@
     @include baseWidth;
     display: flex;
     justify-content: space-between;
+    position: relative;
     .contacts__heading {
       font-family: $inika;
       color: $main-green;
@@ -15,6 +16,50 @@
 
     .contacts__contactsDropDown {
       margin-top: 101px;
+    }
+
+    .contacts__contactsContent {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 40%;
+      width: 449px;
+      padding: 25px 35px 35px 35px;
+      border: 1px solid #000000;
+      border-radius: 20px;
+      font-family: $inter;
+      font-size: 16px;
+      color: #000000;
+      .contactsContent__elem {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        max-width: 280px;
+        .contactsContent__link {
+          color: $main-lightGray;
+        }
+      }
+
+      .contactsContent__btn {
+        padding: 7px 45px;
+        border: 1px solid $main-orange;
+        border-radius: 5px;
+        font-size: 10px;
+        color: $main-lightGray;
+        font-weight: 700;
+        font-family: $inika;
+        margin: auto;
+        display: block;
+        width: fit-content;
+        &:hover {
+          cursor: pointer;
+          background-color: $main-orange;
+          color: #fff;
+        }
+      }
+    }
+    .contacts__contactsContent_active {
+      display: block;
     }
   }
 } 
@@ -28,6 +73,11 @@
   padding: 5px 35px 5px 20px;
   display: flex;
   justify-content: space-between;
+  transition: .3s ease-in-out all;
+  &:hover {
+    cursor: pointer;
+    background: #C1E698;
+  }
   .contactsDropDown__title {
     font-family: $inter;
     font-size: 20px;
@@ -52,10 +102,68 @@
       border-width: 0 1px 1px 0;
       display: inline-block;
       padding: 2px;
+      transition: .3s ease-in-out all;
       transform: rotate(45deg);
       -webkit-transform: rotate(45deg) translateY(-50%) translateX(-50%);
     }
   }
+  .contactsDropDown__btn_active {
+    &::after {
+      transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg) translateY(30%) translateX(8%);
+    }
+  }
+
+  .contactsDropDown__list{
+    width: 100%;
+    height: 0;
+    background-color: #DCE9D9;
+    padding: 0px 50px 0px 20px;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 100%;
+    font-family: $inter; 
+    font-size: 16px;
+    color: $main-green;
+    transition: .55s ease-in-out all;
+    .contactsDropDown__elem {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        left: 0;
+        bottom: -10px;
+        background-color: #D9D9D9;
+      }
+      &:hover {
+        color: $main-lightGray;
+        cursor: pointer;
+        &::after {
+          background-color: $main-lightGray;
+        }
+      }
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .contactsDropDown__elem {
+    display: none;
+  }
+  .contactsDropDown__list_active {
+    height: 220px;
+    padding: 30px 50px 50px 20px;
+  }
+  .contactsDropDown__elem_active {
+    display: block;
+  }
+}
+.contactsDropDown_active {
+  background: #C1E698;
+  box-shadow: none;
 }
 
 @media (max-width: 1439px) {
@@ -64,6 +172,13 @@
     .contacts__wrapper {
       flex-direction: column;
       align-items: center;
+      .contacts__contactsContent {
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%);
+        top: 35%;
+      }
+
       .contacts__heading {
         order: -1;
         margin: unset;
@@ -87,6 +202,22 @@
   .contacts {
     padding: 25px 0px 0 0px;
     .contacts__wrapper {
+      .contacts__contactsContent {
+        background-color: $bg-section;
+        width: 282px;
+        top: 45%;
+        .contactsContent__elem {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 15px;
+          max-width: 280px;
+          .contactsContent__link {
+            color: $main-lightGray;
+            text-align: left;
+          }
+        }
+      }
+
       .contacts__heading {
         font-size: 25px;
       }
